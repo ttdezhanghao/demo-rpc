@@ -16,6 +16,23 @@ import java.net.URI;
  **/
 @Component
 public class RpcAccessPointImpl implements RpcAccessPoint {
+
+    private final String host = "localhost";/*default*/
+    private final int port = 9999;/*default*/
+    private final URI uri = URI.create("rpc://" + host + ":" + port);
+
+    public String getHost() {
+        return host;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public URI getUri() {
+        return uri;
+    }
+
     @Override
     public <T> T getRemoteService(URI uri, Class<T> clazz) {
         return null;
